@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<html>
+
+<head>
+  <title>Jogo da Cobrinha</title>
+
+  <link rel="shortcut icon" type="imagex/png" href="img\snake.png">
+  <link rel="stylesheet" type="text/css" href="css\styles.css">
+  <link rel="stylesheet" type="text/css" href="css\bootstrap5.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div style="position: relative;">
+
+    <div class="titulo div-flex">
+      <strong>Snake: Jogo da Cobrinha</strong>
+      <img src="img\snake-animado.gif" alt="snake animado" style="width: 50px; height: 50px;">
+    </div>
+
+    <div class="div-flex mt-1">
+      <input type="text" id="nome-jogador" placeholder="Insira seu nome">
+    </div>
+
+    <div class="pontos">
+      Pontos: <span id="pontos">0</span>
+    </div>
+    <div class="recorde">
+      Recorde: <span id="recorde">-</span>
+    </div>
+  </div>
+
+  <div class="mt-2" id="game-board"></div>
+
+  <center>
+    <button class="btn btn-success mt-1" id="start-button">Iniciar Jogo</button>
+  </center>
+
+
+  <table class="table table-bordered" id="tabela-jogadores-top-10">
+    <thead>
+      <tr class="table-tr-ranking">
+        <th colspan="2">
+          <div class="text-center table-tr-ranking">Top 10</div>
+        </th>
+      </tr>
+      <tr class="table-tr-ranking">
+        <th>Nome</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- As linhas da tabela serão preenchidas dinamicamente via JavaScript -->
+    </tbody>
+
+    <!-- Botão "Ranking Geral" -->
+    <tfoot>
+      <tr>
+        <td colspan="2" class="text-center">
+          <a class="btn btn-outline-success btn-custom-width" href="ranking-geral.html" target="_blank" role="button">
+            Ranking Geral
+          </a>
+        </td>
+      </tr>
+    </tfoot>
+
+  </table>
+
+
+  <footer class="bg-primary text-white text-center py-3">
+    <div align="center" class="credit">
+      <a href="https://grupo.jm7087.com" class="cor-link-rodape">Grupo JM7087</a>
+      © Copyright 2010-
+      <script type="text/javascript">
+        document.write(new Date().getFullYear());
+      </script>
+      . Todos os direitos reservados. Desenvolvido <span class="cor-nome-dev-rodape"> João Marcos</span><span
+        class="texto-rodape">.
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

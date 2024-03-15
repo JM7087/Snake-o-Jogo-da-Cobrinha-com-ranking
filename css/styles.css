@@ -1,0 +1,147 @@
+#game-board {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+
+#tabela-jogadores-top-10 {
+  position: absolute;
+  top: 45px;
+  right: 0%;
+  width: 20%;
+  max-height: 65%;
+  margin-top: 40px;
+  margin-right: 1%;
+  border-color: black;
+}
+
+@media screen and (max-width: 1400px) {
+  #tabela-jogadores-top-10 {
+    width: 18%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #tabela-jogadores-top-10 {
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #tabela-jogadores-top-10 {
+    position: static;
+    width: 40%;
+    margin-left: 30%;
+  }
+}
+
+
+#tabela-ranking-geral {
+  top: 20px;
+  width: 80%;
+  border-color: black;
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.btn-custom-width {
+  width: 100%;
+}
+
+.titulo {
+  font-size: 30px;
+}
+
+.snake-body {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(18, 139, 3);
+}
+
+#food {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #f00;
+  border-radius: 100px;
+}
+
+.button {
+  display: inline-block;
+  padding: 3px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4c66af;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {
+  background-color: #2115d4;
+}
+
+.button:active {
+  background-color: #2115d4;
+  box-shadow: 0 5px #7e7e7e;
+  transform: translateY(4px);
+}
+
+.pontos {
+  position: absolute;
+  top: 15px;
+  margin-left: 70%;
+}
+
+.recorde {
+  position: absolute;
+  top: 15px;
+  margin-left: 25%;
+}
+
+.div-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-tr-ranking {
+  --bs-table-color: #000;
+  --bs-table-bg: #21b95b;
+  --bs-table-border-color: #bce3ba;
+  --bs-table-striped-bg: #cdefc5;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #bae3bb;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #c1e9bf;
+  --bs-table-hover-color: #000;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
+}
+
+main {
+  flex-grow: 1;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #efefef;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.cor-link-rodape {
+  color: #ffffff;
+}
