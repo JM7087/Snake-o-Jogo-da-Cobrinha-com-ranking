@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS snake_ranking;
 
 -- Selecionar o banco de dados
-USE nome_do_seu_banco;
+USE snake_ranking;
 
 -- Criação da tabela de jogadores
 CREATE TABLE IF NOT EXISTS jogadores (
