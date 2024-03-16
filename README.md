@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS jogadores (
     pontos INT NOT NULL
 );
 
+-- Criação de usuários 
 CREATE USER 'nome_do_usuario'@'localhost' IDENTIFIED VIA mysql_native_password USING 'sua_senha';
 GRANT SELECT, INSERT, UPDATE, DELETE ON snake_ranking * TO 'nome_do_usuario'@'localhost';
 ```
