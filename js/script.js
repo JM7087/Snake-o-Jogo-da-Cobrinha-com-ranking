@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let pontos = 0;
   let recorde = localStorage.getItem('recorde') || 0
   let teclaEspaco = false;
-  let Backspace = false;
+  let Delete = false;
 
   document.getElementById("recorde").innerHTML = recorde;
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     idIntervalo = setInterval(atualizarCobrinha, velocidade);
     document.getElementById("start-button").disabled = true;
     teclaEspaco = true;
-    Backspace = true;
+    Delete = true;
   }
 
   function atualizarCobrinha() {
@@ -99,12 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(idIntervalo);
       alert("Fim de jogo!");
 
-      // enviar o nome é pontos do jogador para armazenamento
-      // enviarNomeParaAPI(nomeJogador, pontos);
-
       location.reload();
       teclaEspaco = false;
-      Backspace = false;
+      Delete = false;
       document.getElementById("start-button").disabled = false;
 
     } else {
@@ -233,9 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
       iniciarJogo();
     }
   });
-  // zera recorde ao apertar a tecla bacspace
+  // zera recorde ao apertar a tecla Delete
   document.addEventListener("keydown", (event) => {
-    if (event.code === "Backspace" && Backspace === false) {
+    if (event.code === "Delete" && Delete === false) {
       recorde = 0
       localStorage.setItem('recorde', recorde);
       document.getElementById("recorde").innerHTML = recorde;
