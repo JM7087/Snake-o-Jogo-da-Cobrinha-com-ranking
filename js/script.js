@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const alturaCampo = 500;
   const tamanhoGrade = 20;
   const velocidadeInicialCobrinha = 200;
-  let nomeJogador = ''
+  let nomeJogador = "";
 
   let cobrinha = [{ x: 0, y: 0 }];
   let comida = {};
@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let idIntervalo;
   let velocidade = velocidadeInicialCobrinha;
   let pontos = 0;
-  let recorde = localStorage.getItem('recorde') || 0
+  let recorde = localStorage.getItem("recorde") || 0;
   let teclaEspaco = false;
   let Delete = false;
 
   document.getElementById("recorde").innerHTML = recorde;
 
-   // atualiza tabela top 10
-   buscarRanking();
+  // atualiza tabela top 10
+  buscarRanking();
 
   function criarComida() {
     comida = {
@@ -73,6 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
       velocidade -= 5;
       pontos++;
       document.getElementById("pontos").innerHTML = pontos;
+      
+      // som comer
+      som('comer');
+
       atualizarRecorde();
 
       // enviar o nome é pontos do jogador para armazenamento
@@ -80,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // atualiza tabela top 10
       buscarRanking();
-
     } else {
       cobrinha.pop();
     }
@@ -97,13 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
       colidiu
     ) {
       clearInterval(idIntervalo);
+
+      // som colidiu
+      som('colidiu');
+
       alert("Fim de jogo!");
 
       location.reload();
       teclaEspaco = false;
       Delete = false;
       document.getElementById("start-button").disabled = false;
-
     } else {
       renderizarCobrinha();
     }
@@ -174,54 +180,69 @@ document.addEventListener("DOMContentLoaded", () => {
     // Atualiza o recorde no localStorage se necessário
     if (pontos > recorde) {
       recorde = pontos;
-      localStorage.setItem('recorde', recorde);
+      localStorage.setItem("recorde", recorde);
       document.getElementById("recorde").innerHTML = recorde;
     }
   }
 
-  // fetch para enviar o nome é pontos do jogador 
+  // fetch para enviar o nome é pontos do jogador
   async function enviarNomeParaAPI(nomeJogador, pontos) {
     try {
       console.log(nomeJogador);
-      const response = await fetch(`php/receber_parametros.php?nome=${nomeJogador}&pontos=${pontos}`);
-  
+      const response = await fetch(
+        `php/receber_parametros.php?nome=${nomeJogador}&pontos=${pontos}`
+      );
+
       if (!response.ok) {
-        throw new Error('Erro ao enviar nome do jogador para a API');
+        throw new Error("Erro ao enviar nome do jogador para a API");
       }
-  
+
       const data = await response.json();
       console.log(data);
     } catch (error) {
-      console.error('Erro:', error);
+      console.error("Erro:", error);
     }
   }
-  
 
   async function buscarRanking() {
     // Busca a lista de jogadores na API e atualiza a tabela
     try {
-      const response = await fetch('php/listar_ranking.php?top=1');
+      const response = await fetch("php/listar_ranking.php?top=1");
       if (!response.ok) {
-        throw new Error('Erro ao buscar lista de jogadores');
+        throw new Error("Erro ao buscar lista de jogadores");
       }
       const data = await response.json();
-      const tabelaJogadores = document.getElementById("tabela-jogadores-top-10");
-      tabelaJogadores.querySelector('tbody').innerHTML = '';
+      const tabelaJogadores = document.getElementById(
+        "tabela-jogadores-top-10"
+      );
+      tabelaJogadores.querySelector("tbody").innerHTML = "";
 
-      data.forEach(jogador => {
-        const linha = document.createElement('tr');
+      data.forEach((jogador) => {
+        const linha = document.createElement("tr");
         linha.innerHTML = `
           <td>${jogador.nome}</td>
           <td>${jogador.pontos}</td>
         `;
-        tabelaJogadores.querySelector('tbody').appendChild(linha);
+        tabelaJogadores.querySelector("tbody").appendChild(linha);
       });
     } catch (error) {
-      console.error('Erro ao buscar lista de jogadores:', error);
+      console.error("Erro ao buscar lista de jogadores:", error);
     }
   }
 
-  document.getElementById("start-button").addEventListener("click", iniciarJogo);
+  function som(tipo) {
+   if(tipo == 'comer') audio = new Audio("som/somComer.mp3");
+
+   if(tipo == 'colidiu') audio = new Audio("som/somColidiu.mp3");
+
+    var som = audio.cloneNode();
+    som.currentTime = audio.currentTime;
+    som.play();
+  }
+
+  document
+    .getElementById("start-button")
+    .addEventListener("click", iniciarJogo);
   document.addEventListener("keydown", lidarComPressionamentoTecla);
   campoJogo.addEventListener("click", lidarComCliqueMouse);
 
@@ -233,10 +254,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // zera recorde ao apertar a tecla Delete
   document.addEventListener("keydown", (event) => {
     if (event.code === "Delete" && Delete === false) {
-      recorde = 0
-      localStorage.setItem('recorde', recorde);
+      recorde = 0;
+      localStorage.setItem("recorde", recorde);
       document.getElementById("recorde").innerHTML = recorde;
     }
   });
-
 });
