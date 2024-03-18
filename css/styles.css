@@ -29,15 +29,6 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
-  #tabela-jogadores-top-10 {
-    position: static;
-    width: 40%;
-    margin-left: 30%;
-  }
-}
-
-
 #tabela-ranking-geral {
   top: 20px;
   width: 80%;
@@ -144,4 +135,44 @@ footer {
 
 .cor-link-rodape {
   color: #ffffff;
+}
+
+
+@media screen and (max-width: 500px) {
+  #tabela-jogadores-top-10 {
+    position: static;
+    width: 40%;
+    margin-left: 30%;
+  }
+  #game-board {
+    width: 375px; 
+    height: 600px;
+  }
+  .btn-custom-tamanho-jogar {
+    width: 350px;
+    height: 50px;
+  }
+  .input-celular {
+    width: 300px;
+    height: 40px;
+  }
+  .recorde {
+    position: static;
+    margin-left: 12%;
+    margin-top: -23px;
+    top: 0px;
+  }
+  .pontos {
+    position: static;
+    margin-left: 70%;
+    top: 0px;
+  }
+  .titulo {
+    font-size: 25px;
+  }
+  #tabela-jogadores-top-10 {
+    position: static;
+    width: 70%;
+    margin-left: 15%;
+  }
 }

@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const campoJogo = document.getElementById("game-board");
-  const larguraCampo = 800;
-  const alturaCampo = 500;
-  const tamanhoGrade = 20;
-  const velocidadeInicialCobrinha = 200;
-  let nomeJogador = "";
 
+  let larguraCampo = 800;
+  let alturaCampo = 500;
+  let tamanhoGrade = 20;
+  let velocidadeInicialCobrinha = 200;
+
+  let nomeJogador = "";
   let cobrinha = [{ x: 0, y: 0 }];
   let comida = {};
   let direcao = "direita";
@@ -20,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // atualiza tabela top 10
   buscarRanking();
+
+  // verifica o tamanho da tela, para ajusta o campo de jogo.
+  ajusdarTamanhoDaTela();
+  window.addEventListener("resize", ajusdarTamanhoDaTela);
 
   function criarComida() {
     comida = {
@@ -73,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       velocidade -= 5;
       pontos++;
       document.getElementById("pontos").innerHTML = pontos;
-      
+
       // som comer
       som('comer');
 
@@ -107,6 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Fim de jogo!");
 
       location.reload();
+
+
       teclaEspaco = false;
       Delete = false;
       document.getElementById("start-button").disabled = false;
@@ -188,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // fetch para enviar o nome é pontos do jogador
   async function enviarNomeParaAPI(nomeJogador, pontos) {
     try {
-      console.log(nomeJogador);
       const response = await fetch(
         `php/receber_parametros.php?nome=${nomeJogador}&pontos=${pontos}`
       );
@@ -231,13 +237,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function som(tipo) {
-   if(tipo == 'comer') audio = new Audio("som/somComer.mp3");
+    if (tipo == 'comer') audio = new Audio("som/somComer.mp3");
 
-   if(tipo == 'colidiu') audio = new Audio("som/somColidiu.mp3");
+    if (tipo == 'colidiu') audio = new Audio("som/somColidiu.mp3");
 
-    var som = audio.cloneNode();
+    const som = audio.cloneNode();
     som.currentTime = audio.currentTime;
     som.play();
+  }
+
+  // ajusta o campo de jogo.
+  function ajusdarTamanhoDaTela() {
+    if (window.innerWidth <= 500) {
+      larguraCampo = 375;
+      alturaCampo = 600;
+    } else {
+      larguraCampo = 800;
+      alturaCampo = 500;
+    }
   }
 
   document

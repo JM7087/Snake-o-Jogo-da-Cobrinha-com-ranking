@@ -17,16 +17,16 @@ if (isset($_GET['nome']) && isset($_GET['pontos'])) {
         if ($pontos > $jogador['pontos']) {
             $stmt = $pdo->prepare("UPDATE jogadores SET pontos = :pontos WHERE id = :id");
             $stmt->execute(['pontos' => $pontos, 'id' => $jogador['id']]);
-            echo "Pontuação atualizada com sucesso!";
+            echo json_encode(["message" => "Pontuação atualizada com sucesso!"]);
         } else {
-            echo "A pontuação informada não é maior do que a pontuação atual.";
+            echo json_encode(["error" => "A pontuação informada não é maior do que a pontuação atual."]);
         }
     } else {
         // Se o jogador não existe, inserir no banco
         $stmt = $pdo->prepare("INSERT INTO jogadores (nome, pontos) VALUES (:nome, :pontos)");
         $stmt->execute(['nome' => $nome, 'pontos' => $pontos]);
-        echo "Jogador cadastrado com sucesso!";
+        echo json_encode(["message" => "Jogador cadastrado com sucesso!"]);
     }
 } else {
-    echo "Por favor, forneça os parâmetros 'nome' e 'pontos'.  exemplo receber_parametros.php?nome=NomeDoJogador&pontos=100";
+    echo json_encode(["error" => "Por favor, forneça os parâmetros 'nome' e 'pontos'. Exemplo: receber_parametros.php?nome=NomeDoJogador&pontos=100"]);
 }
