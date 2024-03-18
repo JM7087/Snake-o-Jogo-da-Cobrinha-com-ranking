@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ajusta o campo de jogo.
   function ajusdarTamanhoDaTela() {
     if (window.innerWidth <= 500) {
-      larguraCampo = 375;
+      larguraCampo = 320;
       alturaCampo = 600;
     } else {
       larguraCampo = 800;
