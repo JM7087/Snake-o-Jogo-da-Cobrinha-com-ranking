@@ -136,6 +136,28 @@ footer {
   color: #ffffff;
 }
 
+@media screen and (max-width: 1199px) {
+  #tabela-jogadores-top-10 {
+    position: static;
+    width: 80%;
+    margin-left: 10%;
+  }
+  .input-celular {
+    width: 300px;
+    height: 40px;
+  }
+  .recorde {
+    position: static;
+    margin-left: 12%;
+    margin-top: -23px;
+    top: 0px;
+  }
+  .pontos {
+    position: static;
+    margin-left: 70%;
+    top: 0px;
+  }
+}
 
 @media screen and (max-width: 500px) {
   #tabela-jogadores-top-10 {
