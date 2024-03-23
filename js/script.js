@@ -1,3 +1,6 @@
+import { som } from './som.js';
+import { enviarNomeParaAPI, buscarRankingTop10 } from './ranking-geral.js';
+
 document.addEventListener("DOMContentLoaded", () => {
   const campoJogo = document.getElementById("game-board");
 
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("recorde").innerHTML = recorde;
 
   // atualiza tabela top 10
-  buscarRanking();
+  buscarRankingTop10();
 
   // verifica o tamanho da tela, para ajusta o campo de jogo.
   ajusdarTamanhoDaTela();
@@ -48,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!validarNome(nomeJogador)) {
       // Nome inválido, não inicie o jogo
       return;
-  }
+    }
 
     criarComida();
     idIntervalo = setInterval(atualizarCobrinha, velocidade);
@@ -88,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       enviarNomeParaAPI(nomeJogador, pontos);
 
       // atualiza tabela top 10
-      buscarRanking();
+      buscarRankingTop10();
     } else {
       cobrinha.pop();
     }
@@ -154,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // controle por clique
   function lidarComCliqueMouse(evento) {
     const campoX =
       campoJogo.getBoundingClientRect().left +
@@ -190,60 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("recorde", recorde);
       document.getElementById("recorde").innerHTML = recorde;
     }
-  }
-
-  // fetch para enviar o nome é pontos do jogador
-  async function enviarNomeParaAPI(nomeJogador, pontos) {
-    try {
-      const response = await fetch(
-        `php/receber_parametros.php?nome=${nomeJogador}&pontos=${pontos}`
-      );
-
-      if (!response.ok) {
-        throw new Error("Erro ao enviar nome do jogador para a API");
-      }
-
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error("Erro:", error);
-    }
-  }
-
-  async function buscarRanking() {
-    // Busca a lista de jogadores na API e atualiza a tabela
-    try {
-      const response = await fetch("php/listar_ranking.php?top=1");
-      if (!response.ok) {
-        throw new Error("Erro ao buscar lista de jogadores");
-      }
-      const data = await response.json();
-      const tabelaJogadores = document.getElementById(
-        "tabela-jogadores-top-10"
-      );
-      tabelaJogadores.querySelector("tbody").innerHTML = "";
-
-      data.forEach((jogador) => {
-        const linha = document.createElement("tr");
-        linha.innerHTML = `
-          <td>${jogador.nome}</td>
-          <td>${jogador.pontos}</td>
-        `;
-        tabelaJogadores.querySelector("tbody").appendChild(linha);
-      });
-    } catch (error) {
-      console.error("Erro ao buscar lista de jogadores:", error);
-    }
-  }
-
-  function som(tipo) {
-    if (tipo == 'comer') audio = new Audio("som/somComer.mp3");
-
-    if (tipo == 'colidiu') audio = new Audio("som/somColidiu.mp3");
-
-    const som = audio.cloneNode();
-    som.currentTime = audio.currentTime;
-    som.play();
   }
 
   // ajusta o campo de jogo.
