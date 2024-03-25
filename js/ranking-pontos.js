@@ -72,3 +72,12 @@ export async function buscarRankingTop10() {
     console.error("Erro ao buscar lista de jogadores:", error);
   }
 }
+
+export function atualizarRecorde(pontos, recorde) {
+  // Atualiza o recorde no localStorage se necessário
+  if (pontos > recorde) {
+    recorde = pontos;
+    localStorage.setItem("recorde", recorde);
+    document.getElementById("recorde").innerHTML = recorde;
+  }
+}

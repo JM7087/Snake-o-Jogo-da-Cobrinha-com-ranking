@@ -1,5 +1,6 @@
 import { som } from './som.js';
-import { enviarNomeParaAPI, buscarRankingTop10 } from './ranking-geral.js';
+import { validarNome } from './verificar.js';
+import { enviarNomeParaAPI, buscarRankingTop10, atualizarRecorde } from './ranking-pontos.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const campoJogo = document.getElementById("game-board");
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let velocidade = velocidadeInicialCobrinha;
   let pontos = 0;
   let recorde = localStorage.getItem("recorde") || 0;
-  let teclaEspaco = false;
+  let teclaEnter = false;
   let Delete = false;
 
   document.getElementById("recorde").innerHTML = recorde;
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     criarComida();
     idIntervalo = setInterval(atualizarCobrinha, velocidade);
     document.getElementById("start-button").disabled = true;
-    teclaEspaco = true;
+    teclaEnter = true;
     Delete = true;
   }
 
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // som comer
       som('comer');
 
-      atualizarRecorde();
+      atualizarRecorde(pontos, recorde);
 
       // enviar o nome é pontos do jogador para armazenamento
       enviarNomeParaAPI(nomeJogador, pontos);
@@ -117,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       location.reload();
 
 
-      teclaEspaco = false;
+      teclaEnter = false;
       Delete = false;
       document.getElementById("start-button").disabled = false;
     } else {
@@ -143,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     campoJogo.appendChild(elementoComida);
   }
 
+  // botaos do teclado
   function lidarComPressionamentoTecla(evento) {
     const teclaPressionada = evento.key;
 
@@ -187,51 +189,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function atualizarRecorde() {
-    // Atualiza o recorde no localStorage se necessário
-    if (pontos > recorde) {
-      recorde = pontos;
-      localStorage.setItem("recorde", recorde);
-      document.getElementById("recorde").innerHTML = recorde;
-    }
-  }
-
   // ajusta o campo de jogo.
   function ajusdarTamanhoDaTela() {
-    if (window.innerWidth <= 500) {
-      larguraCampo = 320;
-      alturaCampo = 600;
-    } else {
-      larguraCampo = 800;
-      alturaCampo = 500;
-    }
+    if (window.innerWidth <= 500) return larguraCampo = 320, alturaCampo = 600;
+    
+    larguraCampo = 800, alturaCampo = 500;  
   }
 
-  // Função para validar o nome do jogador
-  function validarNome(nomeJogador) {
-    // Remover espaços em branco do início e do final
-    nomeJogador = nomeJogador.trim();
-
-    // Verificar se o nome tem pelo menos 2 caracteres e pelo menos uma letra
-    if (nomeJogador.length < 2 || !/[a-zA-Z]/.test(nomeJogador)) {
-      alert("Por favor, insira um nome válido com pelo menos 2 caracteres e pelo menos uma letra!");
-      return false;
-    }
-
-    return true;
-  }
-
-  document
-    .getElementById("start-button")
-    .addEventListener("click", iniciarJogo);
+  document.getElementById("start-button").addEventListener("click", iniciarJogo);
   document.addEventListener("keydown", lidarComPressionamentoTecla);
   campoJogo.addEventListener("click", lidarComCliqueMouse);
 
+  // enter para iniciar jogo
   document.addEventListener("keydown", (event) => {
-    if (event.code === "Space" && teclaEspaco === false) {
-      iniciarJogo();
-    }
+    if (event.code === "Enter" && teclaEnter === false) iniciarJogo();
   });
+
   // zera recorde ao apertar a tecla Delete
   document.addEventListener("keydown", (event) => {
     if (event.code === "Delete" && Delete === false) {
