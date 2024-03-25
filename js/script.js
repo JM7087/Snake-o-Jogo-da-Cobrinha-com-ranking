@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   buscarRankingTop10();
 
   // verifica o tamanho da tela, para ajusta o campo de jogo.
-  ajusdarTamanhoDaTela();
-  window.addEventListener("resize", ajusdarTamanhoDaTela);
+  ajusdarTamanhoDaTelaDoCampoDeJogo();
+  window.addEventListener("resize", ajusdarTamanhoDaTelaDoCampoDeJogo);
 
   function criarComida() {
     comida = {
@@ -190,8 +190,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ajusta o campo de jogo.
-  function ajusdarTamanhoDaTela() {
+  function ajusdarTamanhoDaTelaDoCampoDeJogo() {
     if (window.innerWidth <= 500) return larguraCampo = 320, alturaCampo = 600;
+
+    if (window.innerHeight <= 770) return larguraCampo = 800, alturaCampo = 400;
     
     larguraCampo = 800, alturaCampo = 500;  
   }
