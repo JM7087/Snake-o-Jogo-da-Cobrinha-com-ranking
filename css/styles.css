@@ -159,6 +159,13 @@ footer {
   }
 }
 
+@media screen and (max-width: 810px) {
+  #game-board {
+    width: 700px; 
+    height: 600px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   #tabela-jogadores-top-10 {
     position: static;
@@ -195,11 +202,16 @@ footer {
     position: static;
     width: 70%;
     margin-left: 15%;
+    margin-top: 10px;
   }
 }
 
-@media screen and (max-height: 770px) {
+@media screen and (max-height: 580px) {
   #game-board {
     height: 400px;
+  }
+  #tabela-jogadores-top-10 {
+    top: 8px;
+    margin-top: 0px;
   }
 }

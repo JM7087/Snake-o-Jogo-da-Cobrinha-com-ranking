@@ -1,3 +1,5 @@
+let posicao = 1;
+
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         data.forEach(jogador => {
           const linha = document.createElement('tr');
           linha.innerHTML = `
+           <td>${posicao++}</td>
            <td>${jogador.nome}</td>
            <td>${jogador.pontos}</td>
          `;
@@ -63,6 +66,7 @@ export async function buscarRankingTop10() {
     data.forEach((jogador) => {
       const linha = document.createElement("tr");
       linha.innerHTML = `
+        <td>${posicao++}</td>
         <td>${jogador.nome}</td>
         <td>${jogador.pontos}</td>
       `;
@@ -81,3 +85,4 @@ export function atualizarRecorde(pontos, recorde) {
     document.getElementById("recorde").innerHTML = recorde;
   }
 }
+

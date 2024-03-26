@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     criarComida();
     idIntervalo = setInterval(atualizarCobrinha, velocidade);
     document.getElementById("start-button").disabled = true;
+    document.getElementById("nome-jogador").disabled = true;
     teclaEnter = true;
     Delete = true;
   }
@@ -117,10 +118,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       location.reload();
 
-
       teclaEnter = false;
       Delete = false;
       document.getElementById("start-button").disabled = false;
+      document.getElementById("nome-jogador").disabled = true;
+
     } else {
       renderizarCobrinha();
     }
@@ -191,9 +193,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ajusta o campo de jogo.
   function ajusdarTamanhoDaTelaDoCampoDeJogo() {
+    
     if (window.innerWidth <= 500) return larguraCampo = 320, alturaCampo = 600;
 
-    if (window.innerHeight <= 770) return larguraCampo = 800, alturaCampo = 400;
+    if (window.innerWidth <= 810) return larguraCampo = 700, alturaCampo = 600;
+
+    if (window.innerHeight <= 580) return larguraCampo = 800, alturaCampo = 400;
     
     larguraCampo = 800, alturaCampo = 500;  
   }
