@@ -10,7 +10,9 @@
 
 <h2 align="center">Capturas de Tela Celular</h2>
 
-<img src="https://blogger.googleusercontent.com/img/a/AVvXsEg3iUrJWcmkTPpLjP8zqclqdwcVwVaNDwA5U7TvqPfSutw3SUFdNuZlp1u2gdn7GzS7U3Luyv1Q1Kmu_qyQDXJEdAvx6zHFfHhSwECoAqC1Xvb3zMUZe1lIND6bgWuwRakM-0kuUK6og1uP9WcPC7zxRMYDPVqTzWhrDMqsCRVTkqMKsrcDYq2Iof8AD2S1">
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg3iUrJWcmkTPpLjP8zqclqdwcVwVaNDwA5U7TvqPfSutw3SUFdNuZlp1u2gdn7GzS7U3Luyv1Q1Kmu_qyQDXJEdAvx6zHFfHhSwECoAqC1Xvb3zMUZe1lIND6bgWuwRakM-0kuUK6og1uP9WcPC7zxRMYDPVqTzWhrDMqsCRVTkqMKsrcDYq2Iof8AD2S1" alt="Imagem">
+</p>
 
 ## Configuração
 
