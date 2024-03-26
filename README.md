@@ -1,12 +1,16 @@
 ﻿# Snake o Jogo da Cobrinha com Ranking
 
-<h2 align="center">Capturas de Tela</h2>
+<h2 align="center">Capturas de Tela PC</h2>
 
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjI9YELZ6nT1Y3byZGxk9L_XwPN4GfhRbmlDoUeXhchRY0ZlYVdRgokXMRY9p6FQMqS5jcENwYz2wQMphMCmwvy1V803rnmoVbRzKLH6B4omIRpvBikSqmGQyWRSz09XZBNGPbUTjPCYYwIw0iwWIO9tJLYgmBmuUj6aHDrDlLY2HpQGXA3PSvPjPcWu_jE" width="800">
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEht-2i4gNYVNyPmqsW1_FaGBqqpUltHE0kH2VZ8b35kbNjjkcL9uq2B0tzsSMvQDAPrghsOX1t9ooZ4SJtieNNosk0nFyvo0K7Hpu3lZ_rQPTcZyVmsY44JXFb91CHqpFZB_7r-oCTTcPubA3RHuT0PATTCZ8jF0_C8J0opAayum0PxOTXxUPoRfY5wb5_i" width="800">
 
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeT0m3vfg884LJbviNFyT9ELJhOLpw90pqtfc3y_1XDsASlKaOVQage9h9AIvqTKbVDaNiAxBT8NI_GF6rCxhSpxVqVwL9lqKWOs4LXJPjWS7fKeTMdqMYdHAkr5Vs_wOtcBznW88k7RtrPmqyQ0h1EJDfOjwbreL2SkNGKnvLNpDhZLvTjfEOjmJYkRss" width="800">
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEiJAxJ1Ps_U9XbwRus6TZjlK1pyND6JTE_v-4oWo3x5i_GfCWwkNepx_JLt-ZACVYkp7Fw_cLKu_cH0Z3gqU09fehkRfnKbkHXdgOQyvZDfD0afmLqshyme1zkimD-JzHx8GnZzOsfkObr-XfcUMEOAf8VCvsLdExdmLF0poZCk_OlqzMbb4QIsISI66mal" width="800">
 
-<img src="https://blogger.googleusercontent.com/img/a/AVvXsEhB9N_6YoURUiRvk5dhRqZbZB_e9ydFdlkhdNR2cVwLJNwb4jzLQHdttsSLDRMv0k1ijp9HZuVcoVYJZVaIIqmIlcXGH7C4xkcXE5b9HvUHMdfwrPVlP-fDQbi8VRsyEM3pd9m7Wkag1KHqjJW3Qg79HFnh32HFOnd2Ly0icMCHTfUdK7MhePBPc90rUoL3" width="800">
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEjEspvt-HLSC00pKOh-APGYWbFiZX8aOsdBID1nT0d0WsPSID5cKOONeJshiUh8l8oTPuY87tCFdRfs3O_cZVUKdnDM85zu4EQ_idFNkH4RLUULXHndSfw1ZtuUxB48-0DNAibIdfztbFapJArj3LlP6bZFXa_pwsrdriRJV8bFWLylOpCRRFJKpZ7RycIw" width="800">
+
+<h2 align="center">Capturas de Tela Celular</h2>
+
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEg3iUrJWcmkTPpLjP8zqclqdwcVwVaNDwA5U7TvqPfSutw3SUFdNuZlp1u2gdn7GzS7U3Luyv1Q1Kmu_qyQDXJEdAvx6zHFfHhSwECoAqC1Xvb3zMUZe1lIND6bgWuwRakM-0kuUK6og1uP9WcPC7zxRMYDPVqTzWhrDMqsCRVTkqMKsrcDYq2Iof8AD2S1" width="800">
 
 ## Configuração
 
@@ -58,7 +62,7 @@ try {
 
 # Como Jogar
 - No navegar vai em localhost/o nome da pasta
-- Insira seu nome no campo indicado e clique no botão "Iniciar Jogo".
+- Insira seu nome no campo indicado e clique no botão "Iniciar Jogo" ou Enter.
 - Para jogar basta usar as setas do teclado ⬅️ ⬆️ ➡️ ⬇️ ou Clicar com o 🖱 e controlar a 🐍
 
 ## Contribuição
