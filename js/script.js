@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.innerWidth <= 810) return larguraCampo = 700, alturaCampo = 600;
 
-    if (window.innerHeight <= 580) return larguraCampo = 800, alturaCampo = 400;
+    if (window.innerHeight <= 599) return larguraCampo = 800, alturaCampo = 400;
     
     larguraCampo = 800, alturaCampo = 500;  
   }

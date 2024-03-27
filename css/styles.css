@@ -206,7 +206,7 @@ footer {
   }
 }
 
-@media screen and (max-height: 580px) {
+@media screen and (max-height: 599px) {
   #game-board {
     height: 400px;
   }
