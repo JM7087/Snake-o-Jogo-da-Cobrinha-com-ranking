@@ -62,7 +62,8 @@ export async function buscarRankingTop10() {
       "tabela-jogadores-top-10"
     );
     tabelaJogadores.querySelector("tbody").innerHTML = "";
-
+    posicao = 1;
+    
     data.forEach((jogador) => {
       const linha = document.createElement("tr");
       linha.innerHTML = `
@@ -75,6 +76,7 @@ export async function buscarRankingTop10() {
   } catch (error) {
     console.error("Erro ao buscar lista de jogadores:", error);
   }
+
 }
 
 export function atualizarRecorde(pontos, recorde) {
