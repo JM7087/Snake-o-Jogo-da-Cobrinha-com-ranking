@@ -2,11 +2,18 @@
 
 <h2 align="center">Capturas de Tela PC</h2>
 
-<img src="https://blogger.googleusercontent.com/img/a/AVvXsEht-2i4gNYVNyPmqsW1_FaGBqqpUltHE0kH2VZ8b35kbNjjkcL9uq2B0tzsSMvQDAPrghsOX1t9ooZ4SJtieNNosk0nFyvo0K7Hpu3lZ_rQPTcZyVmsY44JXFb91CHqpFZB_7r-oCTTcPubA3RHuT0PATTCZ8jF0_C8J0opAayum0PxOTXxUPoRfY5wb5_i" width="800">
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEht-2i4gNYVNyPmqsW1_FaGBqqpUltHE0kH2VZ8b35kbNjjkcL9uq2B0tzsSMvQDAPrghsOX1t9ooZ4SJtieNNosk0nFyvo0K7Hpu3lZ_rQPTcZyVmsY44JXFb91CHqpFZB_7r-oCTTcPubA3RHuT0PATTCZ8jF0_C8J0opAayum0PxOTXxUPoRfY5wb5_i" width="800">
+</p>
 
-<img src="https://blogger.googleusercontent.com/img/a/AVvXsEiJAxJ1Ps_U9XbwRus6TZjlK1pyND6JTE_v-4oWo3x5i_GfCWwkNepx_JLt-ZACVYkp7Fw_cLKu_cH0Z3gqU09fehkRfnKbkHXdgOQyvZDfD0afmLqshyme1zkimD-JzHx8GnZzOsfkObr-XfcUMEOAf8VCvsLdExdmLF0poZCk_OlqzMbb4QIsISI66mal" width="800">
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiJAxJ1Ps_U9XbwRus6TZjlK1pyND6JTE_v-4oWo3x5i_GfCWwkNepx_JLt-ZACVYkp7Fw_cLKu_cH0Z3gqU09fehkRfnKbkHXdgOQyvZDfD0afmLqshyme1zkimD-JzHx8GnZzOsfkObr-XfcUMEOAf8VCvsLdExdmLF0poZCk_OlqzMbb4QIsISI66mal" width="800">
+</p>
 
-<img src="https://blogger.googleusercontent.com/img/a/AVvXsEjEspvt-HLSC00pKOh-APGYWbFiZX8aOsdBID1nT0d0WsPSID5cKOONeJshiUh8l8oTPuY87tCFdRfs3O_cZVUKdnDM85zu4EQ_idFNkH4RLUULXHndSfw1ZtuUxB48-0DNAibIdfztbFapJArj3LlP6bZFXa_pwsrdriRJV8bFWLylOpCRRFJKpZ7RycIw" width="800">
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjEspvt-HLSC00pKOh-APGYWbFiZX8aOsdBID1nT0d0WsPSID5cKOONeJshiUh8l8oTPuY87tCFdRfs3O_cZVUKdnDM85zu4EQ_idFNkH4RLUULXHndSfw1ZtuUxB48-0DNAibIdfztbFapJArj3LlP6bZFXa_pwsrdriRJV8bFWLylOpCRRFJKpZ7RycIw" width="800">
+</p>
+
 
 <h2 align="center">Capturas de Tela Celular</h2>
 
@@ -17,7 +24,7 @@
 ## Configuração
 
 1. **Clonando o repositório:**
-- Coloque a pasta em um servidor PHP local como o XAMPP
+- Coloque a pasta em um servidor PHP local como o XAMPP ou WAMP
 
 2. **Importando o banco de dados:**
 - Execute o script SQL fornecido (`script.sql`) para criar o banco de dados e a tabela necessária no MySQL.
@@ -61,6 +68,14 @@ try {
     die("Erro ao conectar: " . $e->getMessage());
 }
 ```
+
+# Tecnologias Utilizadas
+- HTML
+- Java Script
+- CSS
+- Bootsrap
+- PHP
+- SQL
 
 # Como Jogar
 - No navegar vai em localhost/o nome da pasta
