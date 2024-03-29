@@ -19,7 +19,7 @@ if (isset($_GET['nome']) && isset($_GET['pontos'])) {
             $stmt->execute(['pontos' => $pontos, 'id' => $jogador['id']]);
             echo json_encode(["message" => "Pontuação atualizada com sucesso!"]);
         } else {
-            echo json_encode(["error" => "A pontuação informada não é maior do que a pontuação atual."]);
+            echo json_encode(["message" => "A pontuação informada não é maior do que a pontuação atual."]);
         }
     } else {
         // Se o jogador não existe, inserir no banco
@@ -27,6 +27,4 @@ if (isset($_GET['nome']) && isset($_GET['pontos'])) {
         $stmt->execute(['nome' => $nome, 'pontos' => $pontos]);
         echo json_encode(["message" => "Jogador cadastrado com sucesso!"]);
     }
-} else {
-    echo json_encode(["error" => "Por favor, forneça os parâmetros 'nome' e 'pontos'. Exemplo: receber_parametros.php?nome=NomeDoJogador&pontos=100"]);
 }
