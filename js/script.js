@@ -98,9 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cobrinha.pop();
     }
 
-    const colidiu = cobrinha
-      .slice(1)
-      .some((part) => part.x === cabeca.x && part.y === cabeca.y);
+    const colidiu = cobrinha.slice(1).some((part) => part.x === cabeca.x && part.y === cabeca.y);
 
     if (
       cabeca.x < 0 ||
