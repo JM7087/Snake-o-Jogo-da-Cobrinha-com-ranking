@@ -18,7 +18,15 @@
 <h2 align="center">Capturas de Tela Celular</h2>
 
 <p align="center">
-  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg3iUrJWcmkTPpLjP8zqclqdwcVwVaNDwA5U7TvqPfSutw3SUFdNuZlp1u2gdn7GzS7U3Luyv1Q1Kmu_qyQDXJEdAvx6zHFfHhSwECoAqC1Xvb3zMUZe1lIND6bgWuwRakM-0kuUK6og1uP9WcPC7zxRMYDPVqTzWhrDMqsCRVTkqMKsrcDYq2Iof8AD2S1" alt="Imagem">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi2xGL9iaWrcCbxXXuaDinv5rcdyyPLloFGiUpFBU-abI1Mb1mJcmir6C0-fcqzhhLIaJyl8w0fLQu4_MCN6mawKammQkLyE_rI5Z6mIpMnlsUDmDn_wmVHVVLBpEo25JziaLRDoFajuxatycaAdK4aEZaJXG6FSL-NLGQ68Izw905PLfFeOWULcDMT36io">
+</p>
+
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgUWcE5frwZr76i1u1lJIf1JwIQTmBuvEa0ITTCb-xkotuVPltJGMAMupvthVM7xlDUHGyTbaZLp1qCa-gzCVlEHamV38H__4DOaQD9d66sTjpEldfBWX6eXiaJas-B3zf_JodJseMPwTtCeEiP2K1cHWEaNbLMnaGRZMEByIDJV6GqRv2QM5qRYHV7qTU2">
+</p>
+
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiBNZBu0QKFXaHU-dLsy9MFwqfL52YcumMMjX-3S5Fq_CPFjpyWInoAtRe4QllP45oOXouiYsARrFY9KBeuW6BUTJk8vMZWkDwdIU1SMLBF6SX14Hfwaiuf1W8lqazd1Nao0LYh_vZl5T60Z5XhIhw12qgMcnlOCAb2PXBWbAVukUpURTPIFgWYinHR5N8w">
 </p>
 
 ## Configuração
