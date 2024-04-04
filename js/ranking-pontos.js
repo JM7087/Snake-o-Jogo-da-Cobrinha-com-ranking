@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 export async function enviarNomeParaAPI(nomeJogador, pontos) {
   try {
     const response = await fetch(
-      `php/receber_parametros.php?nome=${nomeJogador}&pontos=${pontos}`
+      `php/receber_parametros.php?nome=${nomeJogador}&pontos=${pontos}&senha= uma senha para evitar inserir na url`
     );
 
     if (!response.ok) {

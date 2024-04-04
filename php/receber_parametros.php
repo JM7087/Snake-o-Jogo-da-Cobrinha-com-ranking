@@ -2,8 +2,11 @@
 
 require_once 'conexao.php';
 
+// adicione uma senha
+$senha = $_GET['senha'];
+
 // Verificar se foram passados os parâmetros
-if (isset($_GET['nome']) && isset($_GET['pontos'])) {
+if (isset($_GET['nome']) && isset($_GET['pontos']) && $senha === ' uma senha para evitar inserir na url') {
     $nome = $_GET['nome'];
     $pontos = $_GET['pontos'];
 
